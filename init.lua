@@ -1,4 +1,4 @@
-http = require("http")
+local http = require("http")
 
 -- "A web dyno must bind to its assigned $PORT within 60 seconds of startup."
 -- see https://devcenter.heroku.com/articles/dynos#web-dynos
