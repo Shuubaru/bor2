@@ -28,3 +28,19 @@ http.createServer(function(req, res)
 end):listen(port)
 
 print("Server listening on port "..port)
+
+
+local discordia = require('discordia')
+local cl = discordia.Client()
+
+cl:on('ready', function()
+	print('Logged in as '.. cl.user.username)
+end)
+
+cl:on('messageCreate', function(message)
+	if message.content == '!ping' then
+		message.channel:send('Pong!')
+	end
+end)
+
+cl:run('Bot NjAxMjIzNjg5MDg5OTc0MzE2.XS_LYg.OOjDifoAKjf0fVWm9mVEDqo-hew')
