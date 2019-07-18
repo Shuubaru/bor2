@@ -21,6 +21,7 @@ storage = {},
 local port = process.env["PORT"]
 
 http.createServer(function(req, res)
+	print("idscordia test")
 	local body = "Hello world\n"
 	res:setHeader("Content-Type", "text/plain")
 	res:setHeader("Content-Length", #body)
@@ -32,6 +33,8 @@ print("Server listening on port "..port)
 
 local discordia = require('discordia')
 local cl = discordia.Client()
+
+print("test present")
 
 cl:on('ready', function()
 	print('Logged in as '.. cl.user.username)
